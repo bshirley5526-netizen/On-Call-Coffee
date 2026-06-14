@@ -33,11 +33,11 @@ export default function ContactForm() {
   const validate = () => {
     const e: Record<string, string> = {}
     if (!form.name.trim()) e.name = 'Name is required'
-    if (!form.businessName.trim()) e.businessName = 'Business name is required'
+    if (!form.businessName.trim()) e.businessName = 'This field is required'
     if (!form.email.trim()) e.email = 'Email is required'
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       e.email = 'Enter a valid email'
-    if (!form.message.trim()) e.message = 'Tell us about your goals'
+    if (!form.message.trim()) e.message = 'Tell us what you\'re looking for'
     return e
   }
 
@@ -70,7 +70,7 @@ export default function ContactForm() {
 
       if (res.ok) {
         if (data.fallback) {
-          window.location.href = `mailto:[CONTACT_EMAIL]?subject=Free Preview Request from ${encodeURIComponent(form.businessName)}&body=${encodeURIComponent(`Name: ${form.name}\nBusiness: ${form.businessName}\nEmail: ${form.email}\nWebsite: ${form.website}\n\nGoals:\n${form.message}`)}`
+          window.location.href = `mailto:hello@oncallcoffee.com?subject=Consultation Request from ${encodeURIComponent(form.businessName)}&body=${encodeURIComponent(`Name: ${form.name}\nBusiness/Occasion: ${form.businessName}\nEmail: ${form.email}\nWebsite/Social: ${form.website}\n\nWhat I'm looking for:\n${form.message}`)}`
         }
         setSubmittedEmail(form.email)
         setState('success')
@@ -79,8 +79,7 @@ export default function ContactForm() {
         setState('error')
       }
     } catch {
-      // Fallback to mailto if fetch fails
-      window.location.href = `mailto:[CONTACT_EMAIL]?subject=Free Preview Request from ${form.businessName}&body=Name: ${form.name}%0ABusiness: ${form.businessName}%0AEmail: ${form.email}%0AWebsite: ${form.website}%0A%0AGoals:%0A${form.message}`
+      window.location.href = `mailto:hello@oncallcoffee.com?subject=Consultation Request from ${form.businessName}&body=Name: ${form.name}%0ABusiness/Occasion: ${form.businessName}%0AEmail: ${form.email}%0AWebsite/Social: ${form.website}%0A%0AWhat I'm looking for:%0A${form.message}`
       setState('success')
     }
   }
@@ -93,18 +92,18 @@ export default function ContactForm() {
       >
         <div
           className="w-16 h-16 rounded-full flex items-center justify-center mb-6"
-          style={{ background: 'rgba(45,226,192,0.15)', border: '1px solid rgba(45,226,192,0.3)' }}
+          style={{ background: 'rgba(196,146,62,0.15)', border: '1px solid rgba(196,146,62,0.3)' }}
         >
-          <CheckCircle size={32} color="#2DE2C0" />
+          <CheckCircle size={32} color="#C4923E" />
         </div>
         <h3
           className="font-display font-bold text-2xl mb-3"
           style={{ color: 'var(--text-primary)' }}
         >
-          You&apos;re on the list.
+          We&apos;ll be in touch.
         </h3>
         <p style={{ color: 'var(--text-muted)', maxWidth: '400px' }}>
-          We&apos;ll start working on your free homepage preview and reach out within 48 hours.
+          Thanks for reaching out. We&apos;ll review your request and follow up within 24 hours.
           Keep an eye on {submittedEmail || 'your inbox'}.
         </p>
       </div>
@@ -134,7 +133,7 @@ export default function ContactForm() {
               ...inputStyle,
               borderColor: errors.name ? '#EF4444' : undefined,
             }}
-            onFocus={(e) => (e.target.style.borderColor = '#5B7CFA')}
+            onFocus={(e) => (e.target.style.borderColor = '#C4923E')}
             onBlur={(e) =>
               (e.target.style.borderColor = errors.name ? '#EF4444' : 'var(--border)')
             }
@@ -152,7 +151,7 @@ export default function ContactForm() {
             className="block text-sm font-medium mb-2"
             style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-inter)' }}
           >
-            Business name *
+            Business or occasion *
           </label>
           <input
             id="businessName"
@@ -160,13 +159,13 @@ export default function ContactForm() {
             type="text"
             value={form.businessName}
             onChange={handleChange}
-            placeholder="Bloom Salon Co."
+            placeholder="Acme Corp / Anniversary dinner"
             autoComplete="organization"
             style={{
               ...inputStyle,
               borderColor: errors.businessName ? '#EF4444' : undefined,
             }}
-            onFocus={(e) => (e.target.style.borderColor = '#5B7CFA')}
+            onFocus={(e) => (e.target.style.borderColor = '#C4923E')}
             onBlur={(e) =>
               (e.target.style.borderColor = errors.businessName ? '#EF4444' : 'var(--border)')
             }
@@ -200,7 +199,7 @@ export default function ContactForm() {
               ...inputStyle,
               borderColor: errors.email ? '#EF4444' : undefined,
             }}
-            onFocus={(e) => (e.target.style.borderColor = '#5B7CFA')}
+            onFocus={(e) => (e.target.style.borderColor = '#C4923E')}
             onBlur={(e) =>
               (e.target.style.borderColor = errors.email ? '#EF4444' : 'var(--border)')
             }
@@ -218,7 +217,7 @@ export default function ContactForm() {
             className="block text-sm font-medium mb-2"
             style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-inter)' }}
           >
-            Current website{' '}
+            Website or Instagram{' '}
             <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>(optional)</span>
           </label>
           <input
@@ -230,7 +229,7 @@ export default function ContactForm() {
             placeholder="https://yourbusiness.com"
             autoComplete="url"
             style={inputStyle}
-            onFocus={(e) => (e.target.style.borderColor = '#5B7CFA')}
+            onFocus={(e) => (e.target.style.borderColor = '#C4923E')}
             onBlur={(e) => (e.target.style.borderColor = 'var(--border)')}
           />
         </div>
@@ -242,7 +241,7 @@ export default function ContactForm() {
           className="block text-sm font-medium mb-2"
           style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-inter)' }}
         >
-          What do you want your site to do? *
+          What are you looking for? *
         </label>
         <textarea
           id="message"
@@ -250,14 +249,14 @@ export default function ContactForm() {
           rows={4}
           value={form.message}
           onChange={handleChange}
-          placeholder="Tell us about your business, who your customers are, and what you want visitors to do when they land on your site..."
+          placeholder="Tell us about your team, your event, or your coffee routine. The more detail, the better we can curate for you..."
           style={{
             ...inputStyle,
             resize: 'vertical',
             minHeight: '120px',
             borderColor: errors.message ? '#EF4444' : undefined,
           }}
-          onFocus={(e) => (e.target.style.borderColor = '#5B7CFA')}
+          onFocus={(e) => (e.target.style.borderColor = '#C4923E')}
           onBlur={(e) =>
             (e.target.style.borderColor = errors.message ? '#EF4444' : 'var(--border)')
           }
@@ -279,7 +278,7 @@ export default function ContactForm() {
           }}
         >
           <AlertCircle size={16} />
-          Something went wrong. Try emailing us directly at [CONTACT_EMAIL]
+          Something went wrong. Try emailing us directly at hello@oncallcoffee.com
         </div>
       )}
 
@@ -295,7 +294,7 @@ export default function ContactForm() {
         {state === 'loading' ? (
           <>
             <span
-              className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
+              className="w-4 h-4 border-2 border-current border-t-transparent rounded-full"
               style={{ animation: 'spin 0.8s linear infinite' }}
             />
             Sending...
@@ -303,7 +302,7 @@ export default function ContactForm() {
         ) : (
           <>
             <Send size={16} />
-            Get my free homepage preview
+            Send my request
           </>
         )}
       </button>
@@ -312,7 +311,7 @@ export default function ContactForm() {
         className="text-center mt-4 text-xs"
         style={{ color: 'var(--text-muted)' }}
       >
-        We&apos;ll reply within 48 hours. No spam, ever.
+        We&apos;ll reply within 24 hours. No spam, ever.
       </p>
 
     </form>

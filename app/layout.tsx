@@ -16,15 +16,20 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'On Call Coffee — [TAGLINE]',
-  description: '[META_DESCRIPTION]',
+  title: 'On Call Coffee — Premium coffee. On your terms.',
+  description: 'On Call Coffee delivers specialty-grade, hand-crafted coffee experiences — for your office, your event, or your morning ritual.',
   keywords: [
     'On Call Coffee',
-    // TODO: add relevant keywords
+    'luxury coffee delivery',
+    'specialty coffee subscription',
+    'corporate coffee program',
+    'private event coffee catering',
+    'premium coffee Indianapolis',
+    'artisan coffee delivery',
   ],
   openGraph: {
-    title: 'On Call Coffee — [TAGLINE]',
-    description: '[META_DESCRIPTION]',
+    title: 'On Call Coffee — Premium coffee. On your terms.',
+    description: 'On Call Coffee delivers specialty-grade, hand-crafted coffee experiences — for your office, your event, or your morning ritual.',
     type: 'website',
     locale: 'en_US',
   },
@@ -39,20 +44,21 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${inter.variable}`}
-      style={{ colorScheme: 'light' }}
+      style={{ colorScheme: 'dark' }}
     >
       <head>
-        <meta name="color-scheme" content="light" />
+        <meta name="color-scheme" content="dark" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'ProfessionalService',
+              '@type': 'FoodEstablishment',
               name: 'On Call Coffee',
-              description: '[BUSINESS_DESCRIPTION]',
-              email: '[CONTACT_EMAIL]',
-              url: 'https://[YOUR_DOMAIN]',
+              description: 'Specialty-grade coffee experiences delivered to your office, event, or door.',
+              email: 'hello@oncallcoffee.com',
+              url: 'https://oncallcoffee.com',
+              servesCuisine: 'Coffee',
             }),
           }}
         />

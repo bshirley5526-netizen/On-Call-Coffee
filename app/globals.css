@@ -4,16 +4,16 @@
 
 /* ── Theme tokens ─────────────────────────────────── */
 :root {
-  color-scheme: light;
-  --bg: #FFFFFF;
-  --surface: #FFFFFF;
-  --border: #E4E7EC;
-  --text-primary: #000000;
-  --text-muted: #333333;
-  --accent: #5B7CFA;
-  --mint: #2DE2C0;
-  --shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.10);
+  color-scheme: dark;
+  --bg: #080604;
+  --surface: #111009;
+  --border: #252018;
+  --text-primary: #F0E8DB;
+  --text-muted: #7A6E60;
+  --accent: #C4923E;
+  --mint: #D4B896;
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 48px rgba(0, 0, 0, 0.5);
 }
 
 /* ── Base ─────────────────────────────────────────── */
@@ -33,7 +33,7 @@ body {
 
 /* ── Typography helpers ───────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #5B7CFA 0%, #2DE2C0 100%);
+  background: linear-gradient(135deg, #C4923E 0%, #D4B896 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -71,8 +71,8 @@ body {
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: #5B7CFA;
-  color: #ffffff;
+  background: #C4923E;
+  color: #0A0806;
   font-family: var(--font-space-grotesk), sans-serif;
   font-weight: 600;
   font-size: 15px;
@@ -85,9 +85,9 @@ body {
 }
 
 .btn-primary:hover {
-  background: #4a6ef5;
+  background: #B8832E;
   transform: translateY(-1px);
-  box-shadow: 0 8px 32px rgba(91, 124, 250, 0.4);
+  box-shadow: 0 8px 32px rgba(196, 146, 62, 0.4);
 }
 
 .btn-primary:active {
@@ -113,8 +113,8 @@ body {
 }
 
 .btn-secondary:hover {
-  border-color: #5B7CFA;
-  box-shadow: 0 4px 16px rgba(91,124,250,0.12);
+  border-color: #C4923E;
+  box-shadow: 0 4px 16px rgba(196, 146, 62, 0.15);
   transform: translateY(-1px);
 }
 
@@ -128,9 +128,9 @@ body {
 }
 
 .card:hover {
-  border-color: #5B7CFA;
+  border-color: #C4923E;
   transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(91, 124, 250, 0.15);
+  box-shadow: 0 12px 40px rgba(196, 146, 62, 0.12);
 }
 
 /* ── Section spacing ──────────────────────────────── */
@@ -163,7 +163,7 @@ body {
   position: absolute;
   inset: -1px;
   border-radius: 17px;
-  background: linear-gradient(135deg, #5B7CFA, #2DE2C0);
+  background: linear-gradient(135deg, #C4923E, #D4B896);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -214,7 +214,7 @@ body {
   font-family: var(--font-space-grotesk), sans-serif;
   font-weight: 700;
   font-size: 18px;
-  color: #5B7CFA;
+  color: #C4923E;
   flex-shrink: 0;
 }
 
@@ -230,14 +230,14 @@ body {
 
 /* ── Focus states ─────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid #5B7CFA;
+  outline: 2px solid #C4923E;
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 /* ── Selection ────────────────────────────────────── */
 ::selection {
-  background: rgba(91, 124, 250, 0.3);
+  background: rgba(196, 146, 62, 0.3);
   color: var(--text-primary);
 }
 
@@ -254,7 +254,7 @@ body {
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5B7CFA;
+  background: #C4923E;
 }
 
 /* ── Keyframes ────────────────────────────────────── */
@@ -278,4 +278,3 @@ body {
   40%       { transform: translate(-25px, 18px) scale(0.95); }
   70%       { transform: translate(14px, -14px) scale(1.04); }
 }
-

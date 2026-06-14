@@ -1,59 +1,59 @@
-// PLACEHOLDER: Illustrative target verticals — not real clients.
-// Each card represents the type of business Synthesys builds for.
-// Replace mockup visuals, business name, and outcome copy with real client work as it ships.
+// PLACEHOLDER: Illustrative target occasions — not real client work.
+// Each card represents the type of coffee experience On Call Coffee provides.
+// Replace with real photos and testimonials as they come in.
 
-const projects = [
+const occasions = [
   {
-    id: 'salon',
-    business: 'Bloom Salon Co.',
-    industry: 'Salon & Spa',
-    outcome: 'Designed to drive more booking requests',
-    accentPrimary: '#F472B6',
-    accentSecondary: '#A78BFA',
-    bgFrom: 'rgba(244,114,182,0.14)',
-    bgTo: 'rgba(167,139,250,0.07)',
-    barColor: 'rgba(244,114,182,0.55)',
-    barColorLight: 'rgba(244,114,182,0.25)',
-    btnColor: 'rgba(244,114,182,0.75)',
+    id: 'corporate',
+    business: 'Executive Coffee Program',
+    industry: 'Corporate & Office',
+    outcome: 'Premium weekly coffee service that impresses every visitor',
+    accentPrimary: '#E8A53A',
+    accentSecondary: '#C4923E',
+    bgFrom: 'rgba(232,165,58,0.14)',
+    bgTo: 'rgba(196,146,62,0.07)',
+    barColor: 'rgba(232,165,58,0.55)',
+    barColorLight: 'rgba(232,165,58,0.25)',
+    btnColor: 'rgba(232,165,58,0.75)',
   },
   {
-    id: 'hvac',
-    business: 'Peak HVAC & Plumbing',
-    industry: 'Trades & Contractors',
-    outcome: 'Built to capture leads around the clock',
-    accentPrimary: '#3B82F6',
-    accentSecondary: '#06B6D4',
-    bgFrom: 'rgba(59,130,246,0.14)',
-    bgTo: 'rgba(6,182,212,0.07)',
-    barColor: 'rgba(59,130,246,0.55)',
-    barColorLight: 'rgba(59,130,246,0.25)',
-    btnColor: 'rgba(59,130,246,0.75)',
+    id: 'events',
+    business: 'Signature Event Bar',
+    industry: 'Private Events',
+    outcome: 'Luxury barista experience that elevates your occasion',
+    accentPrimary: '#D4B896',
+    accentSecondary: '#C8A87A',
+    bgFrom: 'rgba(212,184,150,0.14)',
+    bgTo: 'rgba(200,168,122,0.07)',
+    barColor: 'rgba(212,184,150,0.55)',
+    barColorLight: 'rgba(212,184,150,0.25)',
+    btnColor: 'rgba(212,184,150,0.65)',
   },
   {
-    id: 'restaurant',
-    business: 'The Corner Table',
-    industry: 'Restaurant & Café',
-    outcome: 'Made to fill seats and tell the story',
-    accentPrimary: '#F59E0B',
-    accentSecondary: '#EF4444',
-    bgFrom: 'rgba(245,158,11,0.14)',
-    bgTo: 'rgba(239,68,68,0.07)',
-    barColor: 'rgba(245,158,11,0.55)',
-    barColorLight: 'rgba(245,158,11,0.25)',
-    btnColor: 'rgba(245,158,11,0.75)',
+    id: 'home',
+    business: 'Home Roast Subscription',
+    industry: 'Home Delivery',
+    outcome: 'Single-origin curation delivered to your door monthly',
+    accentPrimary: '#B8956A',
+    accentSecondary: '#8A6A4A',
+    bgFrom: 'rgba(184,149,106,0.14)',
+    bgTo: 'rgba(138,106,74,0.07)',
+    barColor: 'rgba(184,149,106,0.55)',
+    barColorLight: 'rgba(184,149,106,0.25)',
+    btnColor: 'rgba(184,149,106,0.75)',
   },
   {
-    id: 'clinic',
-    business: 'Elevate Wellness',
-    industry: 'Clinic & Wellness',
-    outcome: 'Crafted to build trust before first contact',
-    accentPrimary: '#10B981',
-    accentSecondary: '#14B8A6',
-    bgFrom: 'rgba(16,185,129,0.14)',
-    bgTo: 'rgba(20,184,166,0.07)',
-    barColor: 'rgba(16,185,129,0.55)',
-    barColorLight: 'rgba(16,185,129,0.25)',
-    btnColor: 'rgba(16,185,129,0.75)',
+    id: 'hospitality',
+    business: 'Hospitality Partnership',
+    industry: 'Hotel & Venue',
+    outcome: 'White-label luxury coffee program for premium properties',
+    accentPrimary: '#C4B090',
+    accentSecondary: '#9A8A70',
+    bgFrom: 'rgba(196,176,144,0.14)',
+    bgTo: 'rgba(154,138,112,0.07)',
+    barColor: 'rgba(196,176,144,0.55)',
+    barColorLight: 'rgba(196,176,144,0.25)',
+    btnColor: 'rgba(196,176,144,0.65)',
   },
 ]
 
@@ -68,9 +68,9 @@ export default function Portfolio() {
         <div className="text-center mb-14 reveal">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#5B7CFA', fontFamily: 'var(--font-inter)' }}
+            style={{ color: '#C4923E', fontFamily: 'var(--font-inter)' }}
           >
-            Our work
+            Where we show up
           </p>
           <h2
             className="font-display font-bold mb-4"
@@ -80,7 +80,7 @@ export default function Portfolio() {
               letterSpacing: '-0.02em',
             }}
           >
-            Built for businesses like yours.
+            Exceptional coffee for every occasion.
           </h2>
           <p
             style={{
@@ -91,13 +91,13 @@ export default function Portfolio() {
               lineHeight: '1.7',
             }}
           >
-            Premium, conversion-focused sites built for the industries
-            that need to earn trust fast.
+            From boardrooms to backyard gatherings — we bring premium coffee
+            experiences to the moments that deserve them most.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6">
-          {projects.map((p, i) => (
+          {occasions.map((p, i) => (
             <div
               key={p.id}
               className={`rounded-2xl overflow-hidden reveal reveal-delay-${i + 1}`}
@@ -106,7 +106,7 @@ export default function Portfolio() {
                 background: 'var(--surface)',
               }}
             >
-              {/* Simulated website preview */}
+              {/* Visual preview */}
               <div
                 style={{
                   height: '220px',
@@ -123,12 +123,12 @@ export default function Portfolio() {
                     left: 0,
                     right: 0,
                     height: '36px',
-                    borderBottom: '1px solid rgba(255,255,255,0.08)',
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
                     display: 'flex',
                     alignItems: 'center',
                     padding: '0 16px',
                     justifyContent: 'space-between',
-                    background: 'rgba(255,255,255,0.04)',
+                    background: 'rgba(8,6,4,0.3)',
                   }}
                 >
                   <div
@@ -147,7 +147,7 @@ export default function Portfolio() {
                           height: '5px',
                           width: `${w}px`,
                           borderRadius: '3px',
-                          background: 'rgba(255,255,255,0.18)',
+                          background: 'rgba(255,255,255,0.15)',
                         }}
                       />
                     ))}
@@ -194,7 +194,7 @@ export default function Portfolio() {
                       height: '7px',
                       width: '90%',
                       borderRadius: '4px',
-                      background: 'rgba(255,255,255,0.12)',
+                      background: 'rgba(255,255,255,0.10)',
                       marginBottom: '6px',
                     }}
                   />
@@ -203,7 +203,7 @@ export default function Portfolio() {
                       height: '7px',
                       width: '78%',
                       borderRadius: '4px',
-                      background: 'rgba(255,255,255,0.08)',
+                      background: 'rgba(255,255,255,0.07)',
                       marginBottom: '6px',
                     }}
                   />
@@ -212,7 +212,7 @@ export default function Portfolio() {
                       height: '7px',
                       width: '55%',
                       borderRadius: '4px',
-                      background: 'rgba(255,255,255,0.06)',
+                      background: 'rgba(255,255,255,0.05)',
                       marginBottom: '18px',
                     }}
                   />
@@ -249,7 +249,7 @@ export default function Portfolio() {
                     display: 'flex',
                     gap: '8px',
                     padding: '0 16px 12px',
-                    borderTop: '1px solid rgba(255,255,255,0.06)',
+                    borderTop: '1px solid rgba(255,255,255,0.05)',
                     paddingTop: '10px',
                   }}
                 >
@@ -260,7 +260,7 @@ export default function Portfolio() {
                         flex: 1,
                         height: '32px',
                         borderRadius: '8px',
-                        background: 'rgba(255,255,255,0.07)',
+                        background: 'rgba(255,255,255,0.06)',
                         opacity: 1 - (j - 1) * 0.15,
                       }}
                     />
@@ -275,11 +275,7 @@ export default function Portfolio() {
                   borderTop: '1px solid var(--border)',
                 }}
               >
-                <div
-                  style={{
-                    marginBottom: '8px',
-                  }}
-                >
+                <div style={{ marginBottom: '8px' }}>
                   <span
                     className="text-xs font-semibold uppercase tracking-wider"
                     style={{ color: p.accentPrimary }}
@@ -305,12 +301,12 @@ export default function Portfolio() {
           className="text-center mt-10 text-sm reveal"
           style={{ color: 'var(--text-muted)' }}
         >
-          Want to be next?{' '}
+          Ready to experience it yourself?{' '}
           <a
             href="#contact"
-            style={{ color: '#5B7CFA', textDecoration: 'none' }}
+            style={{ color: '#C4923E', textDecoration: 'none' }}
           >
-            Get a free preview →
+            Book a consultation →
           </a>
         </p>
       </div>

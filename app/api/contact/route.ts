@@ -31,62 +31,62 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(apiKey)
 
     const sendResult = await resend.emails.send({
-      from: 'On Call Coffee <hello@[YOUR_DOMAIN]>',
-      to: '[CONTACT_EMAIL]',
+      from: 'On Call Coffee <hello@oncallcoffee.com>',
+      to: 'hello@oncallcoffee.com',
       replyTo: email,
-      subject: `Free Preview Request — ${businessName}`,
+      subject: `Consultation Request — ${businessName}`,
       html: `
-        <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px 24px; color: #0B0F17;">
+        <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 32px 24px; background: #0A0806; color: #F0E8DB;">
           <div style="margin-bottom: 32px;">
             <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
-              <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #5B7CFA, #2DE2C0); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
-              <strong style="font-size: 18px;">On Call Coffee</strong>
+              <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #C4923E, #D4B896); display: flex; align-items: center; justify-content: center; color: #0A0806; font-weight: 700;">☕</div>
+              <strong style="font-size: 18px; color: #F0E8DB;">On Call Coffee</strong>
             </div>
-            <h2 style="margin: 0 0 8px; font-size: 22px;">New free preview request</h2>
-            <p style="margin: 0; color: #6B7280; font-size: 14px;">Someone wants a homepage mockup. 🎉</p>
+            <h2 style="margin: 0 0 8px; font-size: 22px; color: #F0E8DB;">New consultation request</h2>
+            <p style="margin: 0; color: #7A6E60; font-size: 14px;">Someone wants to talk coffee. ☕</p>
           </div>
 
           <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
             <tr>
-              <td style="padding: 12px 16px; background: #F9FAFB; border-radius: 8px 8px 0 0; border-bottom: 1px solid #E5E7EB;">
-                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280;">Name</strong><br>
-                <span style="font-size: 16px;">${name}</span>
+              <td style="padding: 12px 16px; background: #111009; border-radius: 8px 8px 0 0; border-bottom: 1px solid #252018;">
+                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #7A6E60;">Name</strong><br>
+                <span style="font-size: 16px; color: #F0E8DB;">${name}</span>
               </td>
             </tr>
             <tr>
-              <td style="padding: 12px 16px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB;">
-                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280;">Business</strong><br>
-                <span style="font-size: 16px;">${businessName}</span>
+              <td style="padding: 12px 16px; background: #111009; border-bottom: 1px solid #252018;">
+                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #7A6E60;">Business / Occasion</strong><br>
+                <span style="font-size: 16px; color: #F0E8DB;">${businessName}</span>
               </td>
             </tr>
             <tr>
-              <td style="padding: 12px 16px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB;">
-                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280;">Email</strong><br>
-                <a href="mailto:${email}" style="font-size: 16px; color: #5B7CFA;">${email}</a>
+              <td style="padding: 12px 16px; background: #111009; border-bottom: 1px solid #252018;">
+                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #7A6E60;">Email</strong><br>
+                <a href="mailto:${email}" style="font-size: 16px; color: #C4923E;">${email}</a>
               </td>
             </tr>
             <tr>
-              <td style="padding: 12px 16px; background: #F9FAFB; border-bottom: 1px solid #E5E7EB; border-radius: 0 0 0 0;">
-                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280;">Current website</strong><br>
-                <span style="font-size: 16px;">${website || 'None provided'}</span>
+              <td style="padding: 12px 16px; background: #111009; border-bottom: 1px solid #252018;">
+                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #7A6E60;">Website / Instagram</strong><br>
+                <span style="font-size: 16px; color: #F0E8DB;">${website || 'Not provided'}</span>
               </td>
             </tr>
             <tr>
-              <td style="padding: 12px 16px; background: #F9FAFB; border-radius: 0 0 8px 8px;">
-                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #6B7280;">Goals</strong><br>
-                <p style="font-size: 15px; margin: 8px 0 0; white-space: pre-wrap;">${message}</p>
+              <td style="padding: 12px 16px; background: #111009; border-radius: 0 0 8px 8px;">
+                <strong style="font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: #7A6E60;">What they're looking for</strong><br>
+                <p style="font-size: 15px; margin: 8px 0 0; white-space: pre-wrap; color: #F0E8DB;">${message}</p>
               </td>
             </tr>
           </table>
 
-          <div style="background: #EEF2FF; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-            <p style="margin: 0; font-size: 14px; color: #4338CA;">
+          <div style="background: rgba(196,146,62,0.12); border-radius: 8px; padding: 16px; margin-bottom: 24px; border: 1px solid rgba(196,146,62,0.25);">
+            <p style="margin: 0; font-size: 14px; color: #C4923E;">
               <strong>Next step:</strong> Reply to this email to reach ${name} directly at ${email}.
             </p>
           </div>
 
-          <p style="font-size: 12px; color: #9CA3AF; margin: 0;">
-            Sent from the On Call Coffee contact form · [CONTACT_EMAIL]
+          <p style="font-size: 12px; color: #7A6E60; margin: 0;">
+            Sent from the On Call Coffee contact form · hello@oncallcoffee.com
           </p>
         </div>
       `,

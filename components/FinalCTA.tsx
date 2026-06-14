@@ -18,26 +18,26 @@ export default function FinalCTA() {
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background: 'radial-gradient(ellipse at center, rgba(91,124,250,0.12) 0%, transparent 65%)',
+              background: 'radial-gradient(ellipse at center, rgba(196,146,62,0.10) 0%, transparent 65%)',
             }}
           />
 
           {/* Accent lines */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16"
-            style={{ background: 'linear-gradient(to bottom, #5B7CFA, transparent)' }}
+            style={{ background: 'linear-gradient(to bottom, #C4923E, transparent)' }}
           />
           <div
             className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16"
-            style={{ background: 'linear-gradient(to top, #2DE2C0, transparent)' }}
+            style={{ background: 'linear-gradient(to top, #D4B896, transparent)' }}
           />
 
           <div className="relative z-10">
             <p
               className="text-sm font-semibold uppercase tracking-widest mb-6"
-              style={{ color: '#5B7CFA', fontFamily: 'var(--font-inter)' }}
+              style={{ color: '#C4923E', fontFamily: 'var(--font-inter)' }}
             >
-              Ready to stand out?
+              Ready to experience better coffee?
             </p>
 
             <h2
@@ -50,9 +50,8 @@ export default function FinalCTA() {
                 lineHeight: '1.15',
               }}
             >
-              Stand out.{' '}
-              <span style={{ color: '#5B7CFA' }}>Get chosen.</span>{' '}
-              Win the customer.
+              Exceptional coffee.{' '}
+              <span style={{ color: '#C4923E' }}>Wherever you are.</span>
             </h2>
 
             <p
@@ -64,17 +63,17 @@ export default function FinalCTA() {
                 lineHeight: '1.7',
               }}
             >
-              Get a free mockup of your new homepage — no strings, no payment.
-              See exactly what your business could look like before you commit.
+              Book a free consultation and we&apos;ll build the perfect coffee program
+              for your office, your event, or your morning.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a href="#contact" className="btn-primary">
-                Get a free preview of your new website
+                Reserve a consultation
                 <ArrowRight size={16} />
               </a>
-              <a href="#process" className="btn-secondary">
-                See how it works
+              <a href="#services" className="btn-secondary">
+                Explore offerings
               </a>
             </div>
 
@@ -82,7 +81,7 @@ export default function FinalCTA() {
               className="mt-8 text-sm"
               style={{ color: 'var(--text-muted)' }}
             >
-              Free preview · No card required · Yours to keep
+              Free consultation &middot; No commitment &middot; Ships nationwide
             </p>
           </div>
         </div>

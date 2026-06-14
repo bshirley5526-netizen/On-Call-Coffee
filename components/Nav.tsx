@@ -35,7 +35,7 @@ export default function Nav() {
         style={{
           borderColor: scrolled ? 'var(--border)' : 'transparent',
           backgroundColor: scrolled
-            ? 'rgba(255,255,255,0.85)'
+            ? 'rgba(8, 6, 4, 0.92)'
             : 'transparent',
         }}
         aria-label="Main navigation"
@@ -48,12 +48,11 @@ export default function Nav() {
             className="flex items-center no-underline"
             aria-label="On Call Coffee home"
           >
-            {/* TODO: replace with On Call Coffee logo */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo.png"
+              src="/logo-horizontal.png"
               alt="On Call Coffee"
-              style={{ height: '56px', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
             />
           </a>
 
@@ -85,7 +84,7 @@ export default function Nav() {
               className="btn-primary hidden md:inline-flex"
               style={{ padding: '10px 20px', fontSize: '14px' }}
             >
-              Get a free preview
+              Reserve a consultation
             </a>
 
             <button
@@ -114,7 +113,7 @@ export default function Nav() {
       >
         <div
           className="absolute inset-0"
-          style={{ background: 'rgba(11,15,23,0.4)' }}
+          style={{ background: 'rgba(8,6,4,0.6)' }}
           onClick={() => setMenuOpen(false)}
         />
         <div
@@ -163,7 +162,7 @@ export default function Nav() {
               onClick={(e) => { e.preventDefault(); handleNav('#contact') }}
               className="btn-primary text-center justify-center w-full"
             >
-              Get a free preview
+              Reserve a consultation
             </a>
           </div>
         </div>

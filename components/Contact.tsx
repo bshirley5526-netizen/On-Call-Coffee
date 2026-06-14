@@ -13,9 +13,9 @@ export default function Contact() {
           <div className="reveal">
             <p
               className="text-sm font-semibold uppercase tracking-widest mb-4"
-              style={{ color: '#5B7CFA', fontFamily: 'var(--font-inter)' }}
+              style={{ color: '#C4923E', fontFamily: 'var(--font-inter)' }}
             >
-              Free homepage preview
+              Free consultation
             </p>
             <h2
               className="font-display font-bold mb-6"
@@ -26,28 +26,28 @@ export default function Contact() {
                 lineHeight: '1.2',
               }}
             >
-              See what your new site
-              could look like — free.
+              Tell us what you&apos;re
+              looking for.
             </h2>
             <p
               className="text-base leading-relaxed mb-8"
               style={{ color: 'var(--text-muted)', maxWidth: '440px' }}
             >
-              Fill in the form and we&apos;ll mock up your homepage at no cost, no
-              strings attached. If you love it, we&apos;ll talk about the rest. If
-              you don&apos;t — keep the mockup anyway.
+              Whether it&apos;s your office, your event, or your morning ritual —
+              we&apos;ll find the right coffee program for you. No pushy sales,
+              no generic recommendations.
             </p>
 
             <div className="flex flex-col gap-5">
               {[
-                { label: 'No payment required', desc: 'The preview is completely free.' },
-                { label: 'Fast turnaround', desc: 'We\'ll reach out within 48 hours.' },
-                { label: 'No pressure', desc: 'The mockup is yours to keep either way.' },
+                { label: 'Free consultation', desc: 'We talk first, then we curate.' },
+                { label: 'No commitment required', desc: 'Explore your options with zero pressure.' },
+                { label: 'Fast response', desc: 'We\'ll be in touch within 24 hours.' },
               ].map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
                   <div
                     className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
-                    style={{ background: 'linear-gradient(135deg, #5B7CFA, #2DE2C0)' }}
+                    style={{ background: 'linear-gradient(135deg, #C4923E, #D4B896)' }}
                   />
                   <div>
                     <p

@@ -1,31 +1,34 @@
-import { Globe, Palette, Zap, ArrowRight } from 'lucide-react'
+import { Building2, Calendar, Package, ArrowRight } from 'lucide-react'
 
 const services = [
   {
-    icon: Globe,
-    badge: 'The hero offer',
-    title: 'Custom Storefront Websites',
-    body: 'Premium, fast, mobile-perfect sites designed to convert. Every pixel deliberate. Every page built to make a stranger trust you in five seconds.',
-    outcome: 'A storefront that sells while you sleep.',
-    accent: '#5B7CFA',
+    icon: Building2,
+    badge: 'The signature offer',
+    title: 'Corporate Coffee Programs',
+    body: 'Curated premium coffee for your office — from weekly bean delivery to full equipment programs. We make sure every meeting, every morning, and every client visit leaves a lasting impression.',
+    outcome: 'Elevate every meeting room.',
+    accentHex: '#C4923E',
+    accentRgb: '196,146,62',
     featured: true,
   },
   {
-    icon: Palette,
-    badge: 'Polish',
-    title: 'Brand & Design Polish',
-    body: 'Logo refresh, consistent colors and fonts, professional imagery — so every touchpoint looks intentional and every first impression lands.',
-    outcome: 'Look established from the first glance.',
-    accent: '#2DE2C0',
+    icon: Calendar,
+    badge: 'Special occasions',
+    title: 'Private Event Service',
+    body: 'A luxury barista experience for your wedding, launch event, private dinner, or corporate gathering. We bring the craft, the equipment, and the showmanship — you take the credit.',
+    outcome: 'An impression they won\'t forget.',
+    accentHex: '#D4B896',
+    accentRgb: '212,184,150',
     featured: false,
   },
   {
-    icon: Zap,
-    badge: 'Add-on',
-    title: 'Conversion Add-ons',
-    body: 'Online booking, lead capture forms, automated follow-ups, and smart contact tools. The extras that turn your site from a brochure into a sales machine.',
-    outcome: 'Turn clicks into booked customers — automatically.',
-    accent: '#A78BFA',
+    icon: Package,
+    badge: 'Daily ritual',
+    title: 'Home Delivery Subscription',
+    body: 'Small-batch, single-origin roasts curated to your palate and delivered on your schedule. No compromises. No guesswork. Just exceptional coffee, exactly when you want it.',
+    outcome: 'World-class coffee, at your door.',
+    accentHex: '#B8956A',
+    accentRgb: '184,149,106',
     featured: false,
   },
 ]
@@ -41,9 +44,9 @@ export default function Services() {
         <div className="text-center mb-14 reveal">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#5B7CFA', fontFamily: 'var(--font-inter)' }}
+            style={{ color: '#C4923E', fontFamily: 'var(--font-inter)' }}
           >
-            What we build
+            What we offer
           </p>
           <h2
             className="font-display font-bold"
@@ -53,7 +56,7 @@ export default function Services() {
               letterSpacing: '-0.02em',
             }}
           >
-            One focus. Done properly.
+            One focus. Done exceptionally.
           </h2>
         </div>
 
@@ -67,17 +70,20 @@ export default function Services() {
                 style={{
                   background: 'var(--surface)',
                   border: s.featured
-                    ? `1px solid ${s.accent}`
+                    ? `1px solid ${s.accentHex}`
                     : '1px solid var(--border)',
                   boxShadow: s.featured
-                    ? `0 0 40px rgba(91,124,250,0.15), 0 4px 24px rgba(0,0,0,0.2)`
+                    ? `0 0 40px rgba(${s.accentRgb},0.15), 0 4px 24px rgba(0,0,0,0.3)`
                     : 'none',
                 }}
               >
                 {s.featured && (
                   <div
-                    className="absolute -top-3 left-6 px-3 py-1 rounded-full text-xs font-semibold text-white"
-                    style={{ background: 'linear-gradient(135deg, #5B7CFA, #2DE2C0)' }}
+                    className="absolute -top-3 left-6 px-3 py-1 rounded-full text-xs font-semibold"
+                    style={{
+                      background: 'linear-gradient(135deg, #C4923E, #D4B896)',
+                      color: '#0A0806',
+                    }}
                   >
                     Most requested
                   </div>
@@ -86,22 +92,16 @@ export default function Services() {
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 flex-shrink-0"
                   style={{
-                    background: `rgba(${
-                      s.accent === '#5B7CFA' ? '91,124,250' :
-                      s.accent === '#2DE2C0' ? '45,226,192' : '167,139,250'
-                    },0.12)`,
-                    border: `1px solid rgba(${
-                      s.accent === '#5B7CFA' ? '91,124,250' :
-                      s.accent === '#2DE2C0' ? '45,226,192' : '167,139,250'
-                    },0.25)`,
+                    background: `rgba(${s.accentRgb},0.12)`,
+                    border: `1px solid rgba(${s.accentRgb},0.25)`,
                   }}
                 >
-                  <Icon size={22} color={s.accent} />
+                  <Icon size={22} color={s.accentHex} />
                 </div>
 
                 <span
                   className="text-xs font-semibold uppercase tracking-widest mb-3"
-                  style={{ color: s.accent, fontFamily: 'var(--font-inter)' }}
+                  style={{ color: s.accentHex, fontFamily: 'var(--font-inter)' }}
                 >
                   {s.badge}
                 </span>
@@ -124,10 +124,10 @@ export default function Services() {
                   className="flex items-center gap-2 pt-5"
                   style={{ borderTop: '1px solid var(--border)' }}
                 >
-                  <ArrowRight size={14} color={s.accent} />
+                  <ArrowRight size={14} color={s.accentHex} />
                   <p
                     className="text-sm font-semibold"
-                    style={{ color: s.accent, fontFamily: 'var(--font-space-grotesk)' }}
+                    style={{ color: s.accentHex, fontFamily: 'var(--font-space-grotesk)' }}
                   >
                     {s.outcome}
                   </p>

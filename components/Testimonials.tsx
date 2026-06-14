@@ -11,7 +11,7 @@ function StarRow() {
   return (
     <div style={{ display: 'flex', gap: '3px', marginBottom: '16px' }}>
       {[1, 2, 3, 4, 5].map((i) => (
-        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#5B7CFA" aria-hidden="true">
+        <svg key={i} width="14" height="14" viewBox="0 0 14 14" fill="#C4923E" aria-hidden="true">
           <path d="M7 1l1.545 3.13L12 4.635l-2.5 2.435.59 3.435L7 8.895 3.91 10.505 4.5 7.07 2 4.635l3.455-.505L7 1z" />
         </svg>
       ))}
@@ -29,7 +29,7 @@ export default function Testimonials() {
         <div className="text-center mb-12 reveal">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#5B7CFA', fontFamily: 'var(--font-inter)' }}
+            style={{ color: '#C4923E', fontFamily: 'var(--font-inter)' }}
           >
             Client reviews
           </p>
@@ -52,8 +52,8 @@ export default function Testimonials() {
               lineHeight: '1.7',
             }}
           >
-            First client projects are underway. Reviews arrive here as they do —
-            unedited, no fake quotes.
+            First programs are underway. Reviews arrive here as they do —
+            unedited, no fabricated praise.
           </p>
         </div>
 

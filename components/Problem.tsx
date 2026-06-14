@@ -3,18 +3,18 @@ import { AlertCircle, EyeOff, TrendingDown } from 'lucide-react'
 const problems = [
   {
     icon: EyeOff,
-    title: 'You blend in.',
-    body: 'In a crowded market, looking like everyone else means getting skipped. Your competitor with the sharper site wins, even if their work is worse.',
+    title: 'You\'re settling without knowing it.',
+    body: 'Most coffee programs, event setups, and morning routines default to whatever\'s convenient. Convenient and exceptional are rarely the same thing.',
   },
   {
     icon: TrendingDown,
-    title: 'Every bounce is a lost customer.',
-    body: 'A visitor who leaves in 3 seconds didn\'t give you a chance. A dated or generic site signals: "we\'re not serious." They choose someone else.',
+    title: 'The wrong coffee sends the wrong signal.',
+    body: 'What you serve speaks — to your team, your clients, your guests. The quality in the cup says something about your standards everywhere else.',
   },
   {
     icon: AlertCircle,
-    title: 'Your site doesn\'t reflect your business.',
-    body: 'You\'ve built something real. Your website doesn\'t show it. The gap between the quality of your work and how it looks online is costing you trust.',
+    title: 'Good coffee isn\'t a luxury. Ordinary is a waste.',
+    body: 'Life is short. The minutes spent drinking something forgettable are minutes that could have been extraordinary. The upgrade is closer than you think.',
   },
 ]
 
@@ -29,7 +29,7 @@ export default function Problem() {
         <div className="max-w-3xl mx-auto text-center mb-16 reveal">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#5B7CFA', fontFamily: 'var(--font-inter)' }}
+            style={{ color: '#C4923E', fontFamily: 'var(--font-inter)' }}
           >
             The problem
           </p>
@@ -41,7 +41,7 @@ export default function Problem() {
               letterSpacing: '-0.02em',
             }}
           >
-            Your website is quietly losing you customers.
+            Ordinary coffee is everywhere. It doesn&apos;t have to be yours.
           </h2>
           <p
             style={{
@@ -50,9 +50,9 @@ export default function Problem() {
               lineHeight: '1.7',
             }}
           >
-            In a market where everyone&apos;s fighting for attention online, a forgettable
-            website isn&apos;t neutral. It&apos;s a liability. The difference between getting
-            chosen and getting skipped is often just how you look at first glance.
+            Most people default to whatever&apos;s easiest — generic pods, bulk drip,
+            catered mediocrity. Exceptional coffee is rarer than it should be.
+            The difference between forgettable and unforgettable is just knowing where to look.
           </p>
         </div>
 
@@ -68,11 +68,11 @@ export default function Problem() {
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                   style={{
-                    background: 'rgba(91,124,250,0.1)',
-                    border: '1px solid rgba(91,124,250,0.2)',
+                    background: 'rgba(196,146,62,0.10)',
+                    border: '1px solid rgba(196,146,62,0.20)',
                   }}
                 >
-                  <Icon size={22} color="#5B7CFA" />
+                  <Icon size={22} color="#C4923E" />
                 </div>
                 <h3
                   className="font-display font-bold text-xl mb-3"
@@ -107,8 +107,7 @@ export default function Problem() {
               letterSpacing: '-0.01em',
             }}
           >
-            &ldquo;Your business is better than your website makes it look —
-            and that&apos;s costing you.&rdquo;
+            &ldquo;Life is too short to drink unremarkable coffee.&rdquo;
           </p>
         </div>
       </div>

@@ -1,33 +1,33 @@
-import { Gift, Map, Hammer, Rocket } from 'lucide-react'
+import { MessageSquare, Star, Package, RefreshCw } from 'lucide-react'
 
 const steps = [
   {
     number: '01',
-    icon: Gift,
-    title: 'Free Preview',
-    body: 'We mock up your new homepage — no strings attached, no payment required. You see exactly what you\'re getting before you commit to anything.',
-    accent: '#5B7CFA',
+    icon: MessageSquare,
+    title: 'Consultation',
+    body: 'We start with a conversation — your taste, your team, your occasion. No forms, no assumptions. We listen first.',
+    accent: '#C4923E',
   },
   {
     number: '02',
-    icon: Map,
-    title: 'Blueprint',
-    body: 'We lock in the look, the pages, and the goals. A clear plan so there are no surprises — you know what\'s being built and why.',
-    accent: '#2DE2C0',
+    icon: Star,
+    title: 'Curation',
+    body: 'We hand-select the right roasts, service format, and delivery cadence for you specifically. Not a catalog pick — a considered recommendation.',
+    accent: '#D4B896',
   },
   {
     number: '03',
-    icon: Hammer,
-    title: 'Build',
-    body: 'We ship a premium, fully responsive site — usually in days, not weeks. Fast without cutting corners. Every detail hand-crafted.',
-    accent: '#5B7CFA',
+    icon: Package,
+    title: 'Delivery',
+    body: 'Exceptional coffee arrives exactly when and where you need it. For events, we arrive early and leave nothing to chance.',
+    accent: '#C4923E',
   },
   {
     number: '04',
-    icon: Rocket,
-    title: 'Launch + Support',
-    body: 'You go live. We make sure everything runs sharp. Edits, updates, and questions — handled. Your site stays current as your business grows.',
-    accent: '#2DE2C0',
+    icon: RefreshCw,
+    title: 'Refinement',
+    body: 'We check in, adjust, and improve. Your coffee program evolves with your feedback. You\'re never stuck with something that doesn\'t work.',
+    accent: '#D4B896',
   },
 ]
 
@@ -42,7 +42,7 @@ export default function Process() {
         <div className="text-center mb-14 reveal">
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-4"
-            style={{ color: '#5B7CFA', fontFamily: 'var(--font-inter)' }}
+            style={{ color: '#C4923E', fontFamily: 'var(--font-inter)' }}
           >
             How it works
           </p>
@@ -54,10 +54,10 @@ export default function Process() {
               letterSpacing: '-0.02em',
             }}
           >
-            From first look to live site.
+            From first conversation to first sip.
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>
-            A simple, fast process designed so you always know what&apos;s happening.
+            A simple, tailored process so you know exactly what to expect — and can look forward to every step.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export default function Process() {
           {/* Connector line */}
           <div
             className="hidden lg:block absolute top-[60px] left-[12.5%] right-[12.5%] h-px"
-            style={{ background: 'linear-gradient(90deg, #5B7CFA, #2DE2C0)' }}
+            style={{ background: 'linear-gradient(90deg, #C4923E, #D4B896)' }}
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -82,14 +82,14 @@ export default function Process() {
                     className="relative w-[72px] h-[72px] rounded-2xl flex items-center justify-center mb-6 flex-shrink-0"
                     style={{
                       background: 'var(--surface)',
-                      border: `1px solid ${step.accent}40`,
-                      boxShadow: `0 0 24px ${step.accent}20`,
+                      border: `1px solid rgba(${step.accent === '#C4923E' ? '196,146,62' : '212,184,150'},0.3)`,
+                      boxShadow: `0 0 24px rgba(${step.accent === '#C4923E' ? '196,146,62' : '212,184,150'},0.15)`,
                     }}
                   >
                     <Icon size={26} color={step.accent} />
                     <span
-                      className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white"
-                      style={{ background: step.accent, fontSize: '10px' }}
+                      className="absolute -top-2 -right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                      style={{ background: step.accent, fontSize: '10px', color: '#0A0806' }}
                     >
                       {step.number}
                     </span>

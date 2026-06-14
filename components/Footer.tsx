@@ -1,10 +1,10 @@
 import { Mail } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Work', href: '#work' },
   { label: 'Services', href: '#services' },
   { label: 'Process', href: '#process' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Footer() {
@@ -21,19 +21,17 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              {/* TODO: replace with On Call Coffee logo */}
               <img
-                src="/logo.png"
+                src="/logo-horizontal.png"
                 alt="On Call Coffee"
-                style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+                style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
               />
             </div>
             <p
               className="text-sm leading-relaxed mb-4"
               style={{ color: 'var(--text-muted)', maxWidth: '280px' }}
             >
-              {/* TODO: brand tagline */}
-              [FOOTER_TAGLINE]
+              Premium coffee. Available on call.
             </p>
           </div>
 
@@ -76,19 +74,19 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-4">
               <li className="flex items-center gap-3">
-                <Mail size={16} color="#5B7CFA" />
+                <Mail size={16} color="#C4923E" />
                 <a
-                  href="mailto:[CONTACT_EMAIL]"
+                  href="mailto:hello@oncallcoffee.com"
                   className="text-sm transition-colors duration-150"
                   style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
                   onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = '#5B7CFA')
+                    (e.currentTarget.style.color = '#C4923E')
                   }
                   onMouseLeave={(e) =>
                     (e.currentTarget.style.color = 'var(--text-muted)')
                   }
                 >
-                  [CONTACT_EMAIL]
+                  hello@oncallcoffee.com
                 </a>
               </li>
             </ul>
@@ -111,8 +109,7 @@ export default function Footer() {
             className="text-xs"
             style={{ color: 'var(--text-muted)' }}
           >
-            {/* TODO: footer sign-off line */}
-            [FOOTER_SIGNOFF]
+            Crafted with care. Delivered with intention.
           </p>
         </div>
       </div>
