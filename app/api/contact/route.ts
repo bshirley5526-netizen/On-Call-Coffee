@@ -31,8 +31,8 @@ export async function POST(req: NextRequest) {
     const resend = new Resend(apiKey)
 
     const sendResult = await resend.emails.send({
-      from: 'Synthesys Contact Form <hello@synthesyscreate.com>',
-      to: 'synthesyscontact@gmail.com',
+      from: 'On Call Coffee <hello@[YOUR_DOMAIN]>',
+      to: '[CONTACT_EMAIL]',
       replyTo: email,
       subject: `Free Preview Request — ${businessName}`,
       html: `
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
           <div style="margin-bottom: 32px;">
             <div style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px;">
               <div style="width: 32px; height: 32px; border-radius: 8px; background: linear-gradient(135deg, #5B7CFA, #2DE2C0); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
-              <strong style="font-size: 18px;">Synthesys</strong>
+              <strong style="font-size: 18px;">On Call Coffee</strong>
             </div>
             <h2 style="margin: 0 0 8px; font-size: 22px;">New free preview request</h2>
             <p style="margin: 0; color: #6B7280; font-size: 14px;">Someone wants a homepage mockup. 🎉</p>
@@ -86,7 +86,7 @@ export async function POST(req: NextRequest) {
           </div>
 
           <p style="font-size: 12px; color: #9CA3AF; margin: 0;">
-            Sent from the Synthesys contact form · synthesyscontact@gmail.com
+            Sent from the On Call Coffee contact form · [CONTACT_EMAIL]
           </p>
         </div>
       `,

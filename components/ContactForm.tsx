@@ -70,7 +70,7 @@ export default function ContactForm() {
 
       if (res.ok) {
         if (data.fallback) {
-          window.location.href = `mailto:synthesyscontact@gmail.com?subject=Free Preview Request from ${encodeURIComponent(form.businessName)}&body=${encodeURIComponent(`Name: ${form.name}\nBusiness: ${form.businessName}\nEmail: ${form.email}\nWebsite: ${form.website}\n\nGoals:\n${form.message}`)}`
+          window.location.href = `mailto:[CONTACT_EMAIL]?subject=Free Preview Request from ${encodeURIComponent(form.businessName)}&body=${encodeURIComponent(`Name: ${form.name}\nBusiness: ${form.businessName}\nEmail: ${form.email}\nWebsite: ${form.website}\n\nGoals:\n${form.message}`)}`
         }
         setSubmittedEmail(form.email)
         setState('success')
@@ -80,7 +80,7 @@ export default function ContactForm() {
       }
     } catch {
       // Fallback to mailto if fetch fails
-      window.location.href = `mailto:synthesyscontact@gmail.com?subject=Free Preview Request from ${form.businessName}&body=Name: ${form.name}%0ABusiness: ${form.businessName}%0AEmail: ${form.email}%0AWebsite: ${form.website}%0A%0AGoals:%0A${form.message}`
+      window.location.href = `mailto:[CONTACT_EMAIL]?subject=Free Preview Request from ${form.businessName}&body=Name: ${form.name}%0ABusiness: ${form.businessName}%0AEmail: ${form.email}%0AWebsite: ${form.website}%0A%0AGoals:%0A${form.message}`
       setState('success')
     }
   }
@@ -279,7 +279,7 @@ export default function ContactForm() {
           }}
         >
           <AlertCircle size={16} />
-          Something went wrong. Try emailing us directly at synthesyscontact@gmail.com
+          Something went wrong. Try emailing us directly at [CONTACT_EMAIL]
         </div>
       )}
 

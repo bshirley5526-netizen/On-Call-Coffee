@@ -21,9 +21,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
+              {/* TODO: replace with On Call Coffee logo */}
               <img
-                src="/logo-new.png"
-                alt="Synthesys"
+                src="/logo.png"
+                alt="On Call Coffee"
                 style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
               />
             </div>
@@ -31,13 +32,8 @@ export default function Footer() {
               className="text-sm leading-relaxed mb-4"
               style={{ color: 'var(--text-muted)', maxWidth: '280px' }}
             >
-              Websites that make small businesses impossible to ignore.
-            </p>
-            <p
-              className="text-sm font-medium"
-              style={{ color: 'var(--text-muted)' }}
-            >
-              Look like the business you actually are.
+              {/* TODO: brand tagline */}
+              [FOOTER_TAGLINE]
             </p>
           </div>
 
@@ -82,7 +78,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail size={16} color="#5B7CFA" />
                 <a
-                  href="mailto:synthesyscontact@gmail.com"
+                  href="mailto:[CONTACT_EMAIL]"
                   className="text-sm transition-colors duration-150"
                   style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
                   onMouseEnter={(e) =>
@@ -92,7 +88,7 @@ export default function Footer() {
                     (e.currentTarget.style.color = 'var(--text-muted)')
                   }
                 >
-                  synthesyscontact@gmail.com
+                  [CONTACT_EMAIL]
                 </a>
               </li>
             </ul>
@@ -109,13 +105,14 @@ export default function Footer() {
             className="text-xs"
             style={{ color: 'var(--text-muted)' }}
           >
-            © {new Date().getFullYear()} Synthesys. All rights reserved.
+            © {new Date().getFullYear()} On Call Coffee. All rights reserved.
           </p>
           <p
             className="text-xs"
             style={{ color: 'var(--text-muted)' }}
           >
-            A website worth choosing.
+            {/* TODO: footer sign-off line */}
+            [FOOTER_SIGNOFF]
           </p>
         </div>
       </div>

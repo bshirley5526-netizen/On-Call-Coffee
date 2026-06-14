@@ -53,10 +53,8 @@ export default function Hero() {
               letterSpacing: '-0.02em',
             }}
           >
-            Websites that make
-            <br />
-            small businesses{' '}
-            <span style={{ color: '#5B7CFA' }}>impossible to ignore.</span>
+            {/* TODO: replace with On Call Coffee headline */}
+            <span style={{ color: '#5B7CFA' }}>[HERO_HEADLINE]</span>
           </h1>
 
           {/* Subline */}
@@ -68,18 +66,19 @@ export default function Hero() {
               color: 'var(--text-muted)',
             }}
           >
-            Synthesys designs premium websites that make small businesses
-            look unforgettable and turn visitors into customers.
+            {/* TODO: replace with On Call Coffee sub-headline */}
+            [HERO_SUBLINE]
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="#contact" className="btn-primary">
-              Get a free preview of your new website
+              {/* TODO: replace with primary CTA */}
+              [PRIMARY_CTA]
               <ArrowRight size={16} />
             </a>
             <a href="#work" className="btn-secondary">
-              See our work
+              [SECONDARY_CTA]
             </a>
           </div>
 
@@ -88,7 +87,8 @@ export default function Hero() {
             className="mt-8 text-sm"
             style={{ color: 'var(--text-muted)' }}
           >
-            No pressure. No retainer. Just a free homepage mockup — yours to keep.
+            {/* TODO: replace with trust line */}
+            [TRUST_LINE]
           </p>
         </div>
 

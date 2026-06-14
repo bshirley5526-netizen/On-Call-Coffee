@@ -16,20 +16,15 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Synthesys — Websites That Make Small Businesses Impossible to Ignore',
-  description:
-    'Synthesys designs premium websites that make small businesses look unforgettable and turn visitors into customers.',
+  title: 'On Call Coffee — [TAGLINE]',
+  description: '[META_DESCRIPTION]',
   keywords: [
-    'small business website design',
-    'professional website design',
-    'custom web design',
-    'small business web designer',
-    'Synthesys',
+    'On Call Coffee',
+    // TODO: add relevant keywords
   ],
   openGraph: {
-    title: 'Synthesys — Websites that make small businesses impossible to ignore.',
-    description:
-      'Premium, conversion-focused websites for small and local businesses. Built to make you look like the obvious choice.',
+    title: 'On Call Coffee — [TAGLINE]',
+    description: '[META_DESCRIPTION]',
     type: 'website',
     locale: 'en_US',
   },
@@ -54,11 +49,10 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'ProfessionalService',
-              name: 'Synthesys',
-              description:
-                'Premium web design for small businesses.',
-              email: 'synthesyscontact@gmail.com',
-              url: 'https://synthesyscreate.com',
+              name: 'On Call Coffee',
+              description: '[BUSINESS_DESCRIPTION]',
+              email: '[CONTACT_EMAIL]',
+              url: 'https://[YOUR_DOMAIN]',
             }),
           }}
         />

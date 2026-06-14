@@ -46,12 +46,13 @@ export default function Nav() {
             href="#hero"
             onClick={(e) => { e.preventDefault(); handleNav('#hero') }}
             className="flex items-center no-underline"
-            aria-label="Synthesys home"
+            aria-label="On Call Coffee home"
           >
+            {/* TODO: replace with On Call Coffee logo */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-new.png"
-              alt="Synthesys"
+              src="/logo.png"
+              alt="On Call Coffee"
               style={{ height: '56px', width: 'auto', objectFit: 'contain' }}
             />
           </a>
