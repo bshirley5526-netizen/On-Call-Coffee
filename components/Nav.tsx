@@ -4,10 +4,9 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const links = [
-  { label: 'Services', href: '#services' },
-  { label: 'Process', href: '#process' },
+  { label: 'Shop', href: '#products' },
+  { label: 'Our Story', href: '#about' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Nav() {
@@ -29,34 +28,28 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'nav-blur border-b' : ''
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'nav-blur border-b' : ''}`}
         style={{
           borderColor: scrolled ? 'var(--border)' : 'transparent',
-          backgroundColor: scrolled
-            ? 'rgba(8, 6, 4, 0.92)'
-            : 'transparent',
+          backgroundColor: scrolled ? 'rgba(248, 244, 238, 0.92)' : 'transparent',
         }}
         aria-label="Main navigation"
       >
         <div className="container-pad flex items-center justify-between h-16">
-          {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => { e.preventDefault(); handleNav('#hero') }}
             className="flex items-center no-underline"
-            aria-label="On Call Coffee home"
+            aria-label="On Call Coffee Co. home"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-horizontal.png"
-              alt="On Call Coffee"
-              style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
+              src="/logo-on-call.png"
+              alt="On Call Coffee Co."
+              style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
             />
           </a>
 
-          {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
             {links.map((l) => (
               <button
@@ -64,37 +57,26 @@ export default function Nav() {
                 onClick={() => handleNav(l.href)}
                 className="text-sm font-medium transition-colors duration-200 bg-transparent border-none cursor-pointer"
                 style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-inter)' }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = 'var(--text-primary)')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = 'var(--text-muted)')
-                }
+                onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
               >
                 {l.label}
               </button>
             ))}
           </div>
 
-          {/* Right: CTA + mobile toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); handleNav('#contact') }}
+              href="#products"
+              onClick={(e) => { e.preventDefault(); handleNav('#products') }}
               className="btn-primary hidden md:inline-flex"
               style={{ padding: '10px 20px', fontSize: '14px' }}
             >
-              Reserve a consultation
+              Shop Now
             </a>
-
             <button
               className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg"
-              style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-primary)',
-                cursor: 'pointer',
-              }}
+              style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-primary)', cursor: 'pointer' }}
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
@@ -105,64 +87,35 @@ export default function Nav() {
         </div>
       </nav>
 
-      {/* Mobile drawer */}
       <div
-        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
+        <div className="absolute inset-0" style={{ background: 'rgba(28,20,16,0.3)' }} onClick={() => setMenuOpen(false)} />
         <div
-          className="absolute inset-0"
-          style={{ background: 'rgba(8,6,4,0.6)' }}
-          onClick={() => setMenuOpen(false)}
-        />
-        <div
-          className={`absolute top-0 right-0 bottom-0 w-72 p-6 flex flex-col gap-6 transition-transform duration-300 ${
-            menuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-          style={{
-            background: 'var(--surface)',
-            borderLeft: '1px solid var(--border)',
-          }}
+          className={`absolute top-0 right-0 bottom-0 w-64 p-6 flex flex-col gap-6 transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          style={{ background: 'var(--surface)', borderLeft: '1px solid var(--border)' }}
         >
           <div className="flex items-center justify-between">
-            <span className="font-display font-bold" style={{ color: 'var(--text-primary)' }}>
-              Menu
-            </span>
-            <button
-              onClick={() => setMenuOpen(false)}
-              style={{ color: 'var(--text-muted)', background: 'none', border: 'none', cursor: 'pointer' }}
-            >
+            <span className="font-display font-bold text-sm" style={{ color: 'var(--text-muted)' }}>Menu</span>
+            <button onClick={() => setMenuOpen(false)} style={{ color: 'var(--text-muted)', background: 'none', border: 'none', cursor: 'pointer' }}>
               <X size={20} />
             </button>
           </div>
-
           <nav className="flex flex-col gap-1">
             {links.map((l) => (
               <button
                 key={l.label}
                 onClick={() => handleNav(l.href)}
                 className="text-left px-4 py-3 rounded-xl text-base font-medium"
-                style={{
-                  color: 'var(--text-primary)',
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontFamily: 'var(--font-inter)',
-                }}
+                style={{ color: 'var(--text-primary)', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'var(--font-inter)' }}
               >
                 {l.label}
               </button>
             ))}
           </nav>
-
           <div className="mt-auto">
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); handleNav('#contact') }}
-              className="btn-primary text-center justify-center w-full"
-            >
-              Reserve a consultation
+            <a href="#products" onClick={(e) => { e.preventDefault(); handleNav('#products') }} className="btn-primary text-center justify-center w-full">
+              Shop Now
             </a>
           </div>
         </div>

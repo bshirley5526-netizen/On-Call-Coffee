@@ -1,46 +1,26 @@
 import { Mail } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Process', href: '#process' },
+  { label: 'Shop', href: '#products' },
+  { label: 'Our Story', href: '#about' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        backgroundColor: 'var(--bg)',
-        borderTop: '1px solid var(--border)',
-      }}
-    >
-      <div className="container-pad py-16">
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
+    <footer style={{ backgroundColor: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
+      <div className="container-pad py-12">
+        <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/logo-horizontal.png"
-                alt="On Call Coffee"
-                style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
-              />
-            </div>
-            <p
-              className="text-sm leading-relaxed mb-4"
-              style={{ color: 'var(--text-muted)', maxWidth: '280px' }}
-            >
-              Premium coffee. Available on call.
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-on-call.png" alt="On Call Coffee Co." style={{ height: '40px', width: 'auto', objectFit: 'contain', marginBottom: '12px' }} />
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              Small-batch coffee. Roasted to order.
             </p>
           </div>
 
-          {/* Navigation */}
           <div>
-            <h4
-              className="font-display font-semibold text-sm uppercase tracking-widest mb-5"
-              style={{ color: 'var(--text-muted)' }}
-            >
+            <h4 className="font-display font-semibold text-xs uppercase tracking-widest mb-4" style={{ color: 'var(--text-muted)' }}>
               Navigate
             </h4>
             <ul className="flex flex-col gap-3">
@@ -48,14 +28,10 @@ export default function Footer() {
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    className="text-sm transition-colors duration-150"
+                    className="text-sm"
                     style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = 'var(--text-primary)')
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = 'var(--text-muted)')
-                    }
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
                   >
                     {l.label}
                   </a>
@@ -64,52 +40,32 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4
-              className="font-display font-semibold text-sm uppercase tracking-widest mb-5"
-              style={{ color: 'var(--text-muted)' }}
-            >
-              Get in touch
+            <h4 className="font-display font-semibold text-xs uppercase tracking-widest mb-4" style={{ color: 'var(--text-muted)' }}>
+              Contact
             </h4>
-            <ul className="flex flex-col gap-4">
-              <li className="flex items-center gap-3">
-                <Mail size={16} color="#C4923E" />
-                <a
-                  href="mailto:hello@oncallcoffee.com"
-                  className="text-sm transition-colors duration-150"
-                  style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.color = '#C4923E')
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = 'var(--text-muted)')
-                  }
-                >
-                  hello@oncallcoffee.com
-                </a>
-              </li>
-            </ul>
-
+            <a
+              href="mailto:hello@oncallcoffee.com"
+              className="flex items-center gap-2 text-sm"
+              style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-muted)')}
+            >
+              <Mail size={14} />
+              hello@oncallcoffee.com
+            </a>
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div
-          className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8"
+          className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-8"
           style={{ borderTop: '1px solid var(--border)' }}
         >
-          <p
-            className="text-xs"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            © {new Date().getFullYear()} On Call Coffee. All rights reserved.
+          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+            © {new Date().getFullYear()} On Call Coffee Co. All rights reserved.
           </p>
-          <p
-            className="text-xs"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            Crafted with care. Delivered with intention.
+          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+            Roasted fresh. Shipped fast.
           </p>
         </div>
       </div>
