@@ -46,7 +46,7 @@ export default function Nav() {
             <img
               src="/logo-on-call.png"
               alt="On Call Coffee Co."
-              style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '52px', width: 'auto', objectFit: 'contain' }}
             />
           </a>
 

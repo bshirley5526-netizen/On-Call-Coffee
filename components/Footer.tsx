@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-10 mb-10">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo-on-call.png" alt="On Call Coffee Co." style={{ height: '40px', width: 'auto', objectFit: 'contain', marginBottom: '12px' }} />
+            <img src="/logo-on-call.png" alt="On Call Coffee Co." style={{ height: '52px', width: 'auto', objectFit: 'contain', marginBottom: '12px' }} />
             <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
               Small-batch coffee. Roasted to order.
             </p>
