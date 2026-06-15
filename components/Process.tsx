@@ -7,7 +7,7 @@ const steps = [
   {
     number: '02',
     title: 'We roast',
-    body: 'Your beans are roasted fresh within 48 hours of your order — never sitting on a shelf.',
+    body: 'Your beans are roasted fresh within 48 hours of your order. Never sitting on a shelf.',
   },
   {
     number: '03',

@@ -5,7 +5,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative flex flex-col items-center justify-center text-center overflow-hidden"
-      style={{ backgroundColor: 'var(--bg)', minHeight: '88vh', paddingTop: '80px' }}
+      style={{ backgroundColor: 'var(--bg)', minHeight: '88vh', paddingTop: '120px' }}
     >
       {/* Subtle background texture */}
       <div

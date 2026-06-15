@@ -10,19 +10,19 @@ const faqs = [
   },
   {
     q: 'How fresh is the coffee?',
-    a: 'Very. We roast to order — your bag isn\'t sitting on a shelf waiting. Coffee is at peak flavor 5–14 days after roasting, and we make sure yours arrives right in that window.',
+    a: 'Very. We roast to order, so your bag isn\'t sitting on a shelf waiting. Coffee is at peak flavor 5–14 days after roasting, and we make sure yours arrives right in that window.',
   },
   {
     q: 'How does the subscription work?',
-    a: 'You\'ll receive a curated tasting box every month — 3 bags of 6oz, rotated seasonally based on what\'s tasting best. You can pause or cancel anytime, no fees.',
+    a: 'You\'ll receive a curated tasting box every month: 3 bags of 6oz, rotated seasonally based on what\'s tasting best. You can pause or cancel anytime, no fees.',
   },
   {
     q: 'Can I choose my grind size?',
-    a: 'Yes. Whole bean is the default (best for freshness), but we offer ground options — drip, French press, pour over, and espresso. Just select at checkout.',
+    a: 'Yes. Whole bean is the default (best for freshness), but we offer ground options: drip, French press, pour over, and espresso. Just select at checkout.',
   },
   {
     q: 'Do you ship everywhere?',
-    a: 'We ship to all 50 US states. International shipping is coming soon — join the email list and we\'ll let you know when it\'s live.',
+    a: 'We ship to all 50 US states. International shipping is coming soon, so join the email list and we\'ll let you know when it\'s live.',
   },
 ]
 

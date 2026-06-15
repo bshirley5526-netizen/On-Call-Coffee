@@ -1,65 +1,77 @@
-import { ArrowRight } from 'lucide-react'
+'use client'
 
-// PLACEHOLDER: Replace with real product photos and details.
+import { useRouter } from 'next/navigation'
+import { Plus } from 'lucide-react'
+import CoffeeBag from './CoffeeBag'
+import { useCart } from '@/context/CartContext'
+
 const products = [
   {
-    id: 'ethiopia',
-    name: 'Ethiopia Yirgacheffe',
+    id: 'huehue',
+    name: 'Hue Hue',
+    roast: 'Medium Roast',
+    notes: 'Smooth Body · Milk Chocolate · Clean Finish',
+    origin: 'Guatemala',
+    price: 18,
+    size: '12 oz',
+    bg: '#EDE5D8',
+    bagColor: '#A0714A',
+    foldColor: '#8A5E3A',
+    tag: null,
+  },
+  {
+    id: 'yirgacheffe',
+    name: 'Yirgacheffe',
     roast: 'Light Roast',
-    notes: 'Jasmine · Blueberry · Lemon zest',
-    origin: 'Single Origin',
-    price: '$18',
+    notes: 'Juicy · Floral · Blueberry Finish',
+    origin: 'Ethiopia',
+    price: 18,
     size: '12 oz',
     bg: '#F5EDE0',
+    bagColor: '#C49A6A',
+    foldColor: '#B48858',
     tag: 'Fan favorite',
   },
   {
-    id: 'colombia',
-    name: 'Colombia Huila',
-    roast: 'Medium Roast',
-    notes: 'Caramel · Red apple · Almond',
-    origin: 'Single Origin',
-    price: '$17',
-    size: '12 oz',
-    bg: '#EDE5D8',
-    tag: null,
-  },
-  {
-    id: 'house',
-    name: 'House Blend',
-    roast: 'Medium Dark',
-    notes: 'Dark chocolate · Walnut · Brown sugar',
-    origin: 'Signature Blend',
-    price: '$16',
-    size: '12 oz',
-    bg: '#E8DDD0',
-    tag: null,
-  },
-  {
-    id: 'midnight',
-    name: 'The Midnight',
+    id: 'mandheling',
+    name: 'Mandheling',
     roast: 'Dark Roast',
-    notes: 'Bittersweet chocolate · Smoke · Molasses',
-    origin: 'Espresso Blend',
-    price: '$17',
+    notes: 'Bold · Earthy · Nutty',
+    origin: 'Sumatra',
+    price: 18,
     size: '12 oz',
     bg: '#DDD0C4',
-    tag: 'Best for espresso',
+    bagColor: '#4A2E18',
+    foldColor: '#3A2210',
+    tag: null,
   },
   {
     id: 'subscription',
-    name: 'Monthly Tasting Box',
+    name: 'Tasting Box',
     roast: '3 rotating roasts',
     notes: 'Curated to your taste profile',
     origin: 'Curated Selection',
-    price: '$45',
+    price: 45,
     size: '3 × 6 oz',
     bg: '#F0E6D8',
+    bagColor: '#8B5E3C',
+    foldColor: '#7A4E2C',
     tag: 'Most popular',
   },
 ]
 
 export default function Products() {
+  const { addItem } = useCart()
+  const router = useRouter()
+
+  const handleAdd = (p: typeof products[number]) => {
+    addItem({
+      id: p.id, name: p.name, origin: p.origin, roast: p.roast,
+      price: p.price, size: p.size, bg: p.bg, bagColor: p.bagColor, foldColor: p.foldColor,
+    })
+    router.push('/order')
+  }
+
   return (
     <section
       id="products"
@@ -88,8 +100,8 @@ export default function Products() {
         </div>
 
         {/* Grid — 4 bags + 1 wide subscription */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
-          {products.slice(0, 4).map((p, i) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
+          {products.slice(0, 3).map((p, i) => (
             <div
               key={p.id}
               className={`relative rounded-2xl overflow-hidden reveal reveal-delay-${i + 1}`}
@@ -108,24 +120,13 @@ export default function Products() {
                     {p.tag}
                   </span>
                 )}
-                {/* PLACEHOLDER: replace with real product image */}
-                <div style={{ textAlign: 'center' }}>
-                  <div
-                    className="font-display font-bold"
-                    style={{ fontSize: '11px', letterSpacing: '0.12em', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '6px' }}
-                  >
-                    {p.roast}
-                  </div>
-                  <div
-                    style={{
-                      width: '72px',
-                      height: '96px',
-                      borderRadius: '8px',
-                      background: 'rgba(28,20,16,0.12)',
-                      margin: '0 auto',
-                    }}
-                  />
-                </div>
+                <CoffeeBag
+                  name={p.name}
+                  origin={p.origin}
+                  roast={p.roast}
+                  bagColor={p.bagColor}
+                  foldColor={p.foldColor}
+                />
               </div>
 
               <div style={{ padding: '18px 20px' }}>
@@ -141,17 +142,17 @@ export default function Products() {
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="font-display font-bold text-lg" style={{ color: 'var(--text-primary)' }}>
-                      {p.price}
+                      ${p.price}
                     </span>
                     <span className="text-xs ml-1" style={{ color: 'var(--text-muted)' }}>{p.size}</span>
                   </div>
-                  <a
-                    href="#contact"
+                  <button
+                    onClick={() => handleAdd(p)}
                     className="text-xs font-semibold flex items-center gap-1"
-                    style={{ color: 'var(--text-primary)', textDecoration: 'none' }}
+                    style={{ background: 'var(--text-primary)', color: 'var(--bg)', border: 'none', borderRadius: '20px', padding: '6px 12px', cursor: 'pointer' }}
                   >
-                    Order <ArrowRight size={12} />
-                  </a>
+                    <Plus size={11} /> Add
+                  </button>
                 </div>
               </div>
             </div>
@@ -159,63 +160,61 @@ export default function Products() {
         </div>
 
         {/* Subscription — full width */}
-        {products[4] && (
+        {(() => { const sub = products[3]; return (
           <div
             className="relative rounded-2xl overflow-hidden flex flex-col sm:flex-row reveal"
-            style={{ border: '1px solid var(--border)', background: products[4].bg }}
+            style={{ border: '1px solid var(--border)', background: sub.bg }}
           >
             <span
               className="absolute top-4 left-4 text-xs font-semibold px-3 py-1 rounded-full"
               style={{ background: 'var(--text-primary)', color: 'var(--bg)' }}
             >
-              {products[4].tag}
+              {sub.tag}
             </span>
 
             <div className="flex items-center justify-center sm:w-64 flex-shrink-0" style={{ minHeight: '180px' }}>
-              {/* PLACEHOLDER: replace with subscription box image */}
-              <div style={{ display: 'flex', gap: '10px' }}>
-                {[0, 1, 2].map((j) => (
-                  <div
-                    key={j}
-                    style={{
-                      width: '48px',
-                      height: '72px',
-                      borderRadius: '6px',
-                      background: 'rgba(28,20,16,0.12)',
-                      transform: `rotate(${(j - 1) * 5}deg)`,
-                    }}
-                  />
+              <div style={{ display: 'flex', gap: '6px', alignItems: 'flex-end' }}>
+                {([products[0], products[1], products[2]] as typeof products).map((p, j) => (
+                  <div key={p.id} style={{ transform: `rotate(${(j - 1) * 6}deg)`, transformOrigin: 'bottom center' }}>
+                    <CoffeeBag
+                      name={p.name}
+                      origin={p.origin}
+                      roast={p.roast}
+                      bagColor={p.bagColor}
+                      foldColor={p.foldColor}
+                    />
+                  </div>
                 ))}
               </div>
             </div>
 
             <div className="flex-1 p-8 flex flex-col justify-center">
               <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: 'var(--mint)' }}>
-                {products[4].origin}
+                {sub.origin}
               </p>
               <h3 className="font-display font-bold text-2xl mb-2" style={{ color: 'var(--text-primary)', letterSpacing: '-0.02em' }}>
-                {products[4].name}
+                {sub.name}
               </h3>
               <p className="text-sm mb-2" style={{ color: 'var(--text-muted)' }}>
-                {products[4].roast} · {products[4].notes}
+                {sub.roast} · {sub.notes}
               </p>
               <p className="text-sm mb-6" style={{ color: 'var(--text-muted)' }}>
-                {products[4].size} · Ships monthly · Cancel anytime
+                {sub.size} · Ships monthly · Cancel anytime
               </p>
               <div className="flex items-center gap-6">
                 <div>
                   <span className="font-display font-bold text-2xl" style={{ color: 'var(--text-primary)' }}>
-                    {products[4].price}
+                    ${sub.price}
                   </span>
                   <span className="text-sm ml-1" style={{ color: 'var(--text-muted)' }}>/month</span>
                 </div>
-                <a href="#contact" className="btn-primary">
-                  Subscribe <ArrowRight size={15} />
-                </a>
+                <button onClick={() => handleAdd(sub)} className="btn-primary" style={{ border: 'none', cursor: 'pointer' }}>
+                  <Plus size={14} /> Add to cart
+                </button>
               </div>
             </div>
           </div>
-        )}
+        ); })()}
       </div>
     </section>
   )
