@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import { Plus, Minus, ArrowRight, ArrowLeft, Lock, ShoppingBag } from 'lucide-react'
+import { Plus, Minus, ArrowRight, ArrowLeft, ShoppingBag } from 'lucide-react'
 import Link from 'next/link'
 import { useCart } from '@/context/CartContext'
 import CoffeeBag from '@/components/CoffeeBag'
@@ -12,38 +11,10 @@ const SHIP_COST = 5.99
 
 export default function OrderPage() {
   const { items, setQty, setGrind } = useCart()
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
 
   const subtotal = items.reduce((s, i) => s + i.qty * i.price, 0)
   const freeShip = subtotal >= FREE_SHIP_THRESHOLD
   const total = freeShip ? subtotal : subtotal > 0 ? subtotal + SHIP_COST : 0
-
-  const checkout = async () => {
-    if (!items.length) return
-    setLoading(true)
-    setError('')
-    try {
-      const res = await fetch('/api/order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          items: items.map(i => ({ id: i.id, name: i.name, grind: i.grind, qty: i.qty, price: i.price })),
-          freeShip,
-        }),
-      })
-      const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      } else {
-        setError('Something went wrong. Please try again.')
-      }
-    } catch {
-      setError('Something went wrong. Please try again.')
-    } finally {
-      setLoading(false)
-    }
-  }
 
   return (
     <div style={{ backgroundColor: 'var(--bg)', minHeight: '100vh' }}>
@@ -188,24 +159,22 @@ export default function OrderPage() {
               </div>
             </div>
 
-            {error && (
-              <p style={{ fontSize: '13px', color: '#c0392b', marginBottom: '12px', textAlign: 'center' }}>{error}</p>
-            )}
-
-            <button
-              onClick={checkout}
-              disabled={loading}
-              className="btn-primary"
-              style={{ width: '100%', justifyContent: 'center', fontSize: '16px', padding: '16px', opacity: loading ? 0.65 : 1, cursor: loading ? 'not-allowed' : 'pointer', border: 'none' }}
+            <Link
+              href="/checkout"
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                width: '100%', padding: '16px', borderRadius: '12px',
+                background: 'var(--text-primary)', color: 'var(--bg)',
+                textDecoration: 'none', fontSize: '16px', fontWeight: 700,
+                fontFamily: 'var(--font-space-grotesk)',
+              }}
             >
-              {loading ? 'Redirecting to checkout...' : `Pay $${total.toFixed(2)}`}
-              {!loading && <ArrowRight size={16} />}
-            </button>
+              Proceed to checkout <ArrowRight size={16} />
+            </Link>
 
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginTop: '10px' }}>
-              <Lock size={11} color="var(--text-muted)" />
-              <p style={{ fontSize: '11px', color: 'var(--text-muted)' }}>Secured by Square</p>
-            </div>
+            <p style={{ fontSize: '11px', color: 'var(--text-muted)', textAlign: 'center', marginTop: '10px' }}>
+              You'll enter your card and address on the next step.
+            </p>
           </div>
         )}
       </div>
